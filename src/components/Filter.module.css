@@ -1,3 +1,26 @@
 .filter {
-   
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   gap: 20px;
+}
+
+label {
+   font-size: 1rem;
+}
+
+.filter input {
+   padding: 10px;
+}
+
+.filter select {
+   padding: 10px;
+}
+
+.filter select option {
+   background-color: #b9b9b9;
+}
+
+.filter button {
+   padding: 10px;
 }
