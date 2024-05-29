@@ -1,0 +1,43 @@
+.shopCatalog {
+   display: flex;
+   flex-direction: column;
+   align-items: center;   
+   margin: 0 20px;
+}
+
+.products {
+   display: flex;
+   flex-direction: column;
+   gap: 30px;   
+}
+
+.department {
+   display: flex;
+   flex-direction: column;
+}
+
+.departmentProducts {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   column-gap: 20px;
+   justify-content: center;
+}
+
+.departmentProduct {  
+   display: flex;
+   flex-direction: column;
+   width: 150px;
+}
+
+.productName {
+   font-weight: 700;
+}
+
+.productPrice {
+   font-style: italic;
+}
+
+.buttonBuy {
+   cursor: pointer;
+}
