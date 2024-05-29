@@ -59,16 +59,18 @@ function App() {
     }    
   }
 
-  function handleFilteredText() {
-
+  function handleFilteredText(e) {
+    setFilteredText(e.target.value);
   }
 
-  function handleFilteredDepartment() {
-
+  function handleFilteredDepartment(e) {
+    setFilteredDepartment(e.target.value);
   }
 
-  function handleFilterReset() {
-
+  function handleFilterReset(e) {
+    e.preventDefault();
+    setFilteredText('');
+    setFilteredDepartment('');    
   }
 
   function getNewId() {
@@ -81,12 +83,13 @@ function App() {
   }
 
   useEffect(() => {
-    let filter = cart;
-
-    //filter cart data
+    let filtered = cart;
     
-
-    setFilteredCart(filter);
+    //filter cart data
+    if (filteredText) filtered = filtered.filter(p => p.product.toLowerCase().includes(filteredText.toLowerCase()));
+    if (filteredDepartment && filteredDepartment !== '') filtered = filtered.filter(p => p.department === filteredDepartment);
+    
+    setFilteredCart(filtered);
   }, [cart, filteredText, filteredDepartment]);
 
   return (
@@ -96,6 +99,7 @@ function App() {
         addToCart={handleAddToCart} />
       <Cart 
         cart={filteredCart} 
+        isFilter={cart.length > 0}
         handleRemoveFromCart={handleRemoveFromCart} 
         filterText={filteredText} 
         handleFilterText={handleFilteredText} 

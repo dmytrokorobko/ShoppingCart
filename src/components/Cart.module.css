@@ -45,6 +45,7 @@
 .cartComponents ul li .productButtonRemove {
    width: 80px;
    padding: 5px;
+   cursor: pointer;
 }
 
 .cartComponents .priceTotal {

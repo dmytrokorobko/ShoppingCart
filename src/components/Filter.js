@@ -12,6 +12,7 @@ export function Filter({filterText, handleFilterText, departmentsList, selectedF
          <div>
             <label htmlFor='departments'>Department: </label>
             <select id='departments' value={selectedFilterDepartment} onChange={handleFilterDepartment}>
+               <option key='000' value=''>All Departments</option>
                {shopDepartmentsList}
             </select>
          </div>
